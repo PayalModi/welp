@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \
+create table 
+\i restaurant
+\i0  (\
+	
+\i name
+\i0  		varchar(20),\
+	
+\i ID
+\i0  		char(5),\
+	
+\i phone
+\i0  	numeric(10),\
+	
+\i website
+\i0 	varchar(30),\
+	
+\i cuisine
+\i0 	varchar(20),\
+	
+\i price_range
+\i0 	?\
+	
+\i avg_rating
+\i0 	numeric(2,1),\
+\
+	primary key (ID)\
+);\
+\
+create table 
+\i menu
+\i0 (\
+	
+\i rest_id
+\i0 	char(5),\
+	
+\i item_id
+\i0  	char(5),\
+	
+\i item_name
+\i0 	varchar(20),\
+\
+	primary key (rest_id, item_id),\
+	foreign key (
+\i rest_id
+\i0 ) references 
+\i restaurant\
+	
+\i0 foreign key (item_id) references 
+\i item
+\i0 \
+);\
+\
+create table 
+\i user
+\i0 (\
+	
+\i name
+\i0 		varchar(20),\
+	
+\i user_id
+\i0  	char(10),\
+	\
+	primary key (user_id)\
+);\
+\
+create table 
+\i comment
+\i0 (\
+	
+\i user_id		
+\i0 char(10),\
+	
+\i restaurant_id 	
+\i0 char(5),\
+	
+\i rating			
+\i0 numeric(2,1),\
+	
+\i would_recommend	
+\i0 char(1),\
+	
+\i comment 		
+\i0 varchar(100),\
+\
+	primary key (user_id, restaurant_id),\
+	foreign key (user_id) references 
+\i user,
+\i0 \
+	foreign key (restaurant_id) references 
+\i restaurant
+\i0 \
+);\
+\
+create table 
+\i item(
+\i0 \
+	
+\i item_id
+\i0  		char(5),\
+	
+\i ingredient_list
+\i0 	varchar(100),\
+	\
+	primary key (item_id)\
+);\
+\
+create table 
+\i friendship
+\i0 (\
+	user_id		char(10),\
+	friend_id		char(10),\
+\
+	primary key (user_id, friend_id),\
+	foreign key (user_id) references 
+\i user,
+\i0 \
+	foreign key (friend_id) references 
+\i user
+\i0 \
+);\
+	\
+\
+}
