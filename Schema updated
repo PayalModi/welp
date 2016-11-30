@@ -46,9 +46,9 @@ create table item(
 	primary key (item_id)
 );
 
-create table friendship(
+create table following(
 	user_id			char(10),
-	friend_id		char(10),
+	followed_id		char(10),
 
 	primary key (user_id, friend_id),
 	foreign key (user_id) references user,
