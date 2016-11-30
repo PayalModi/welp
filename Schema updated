@@ -2,9 +2,9 @@
 create table restaurant (
 	name 		varchar(20),
 	ID 		char(5),
-	phone 	numeric(10),
-	website	varchar(30),
-	cuisine	varchar(20),
+	phone 		numeric(10),
+	website		varchar(30),
+	cuisine		varchar(20),
 	price		varchar(3),
 	avg_rating	numeric(2,1),
 
