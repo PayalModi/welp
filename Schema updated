@@ -5,14 +5,14 @@ create table restaurant (
 	phone 	numeric(10),
 	website	varchar(30),
 	cuisine	varchar(20),
-	price_range	?
+	price		varchar(3),
 	avg_rating	numeric(2,1),
 
 	primary key (ID)
 );
 
 create table menu(
-	rest_id	char(5),
+	rest_id		char(5),
 	item_id 	char(5),
 	item_name	varchar(20),
 
@@ -29,10 +29,9 @@ create table user(
 );
 
 create table comment(
-	user_id		char(10),
-	restaurant_id 	char(5),
+	user_id			char(10),
+	restaurant_id 		char(5),
 	rating			numeric(2,1),
-	would_recommend	char(1),
 	comment 		varchar(100),
 
 	primary key (user_id, restaurant_id),
@@ -42,13 +41,13 @@ create table comment(
 
 create table item(
 	item_id 		char(5),
-	ingredient_list	varchar(100),
+	ingredient_list		varchar(100),
 	
 	primary key (item_id)
 );
 
 create table friendship(
-	user_id		char(10),
+	user_id			char(10),
 	friend_id		char(10),
 
 	primary key (user_id, friend_id),
