@@ -18,8 +18,8 @@
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
 	        $price = $_GET["price"];
-	        if ($price == 'none') {
-	        	$price = '%'
+	        if ($price == "none") {
+	        	$price = "%";
 	        }
 	        $sql = "SELECT * FROM restaurant, menu, item WHERE cuisine LIKE '%$cuisine' AND price LIKE '$price' AND ingredient_List LIKE '%$ingredient%' AND item.item_id = menu.item_id AND menu.rest_id = restaurant.ID;";
 	        $result = $conn->query($sql);
