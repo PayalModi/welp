@@ -27,38 +27,6 @@ input[type=text]:focus {
 }
 </style>
 
-<script>
-function searchForRestaurant() {
-	document.getElementById("test").innerHTML = "<?php
-		$servername = "localhost";
-		$username = "root";
-		$password = "finalproject";
-		$dbname = "cs437db";
-
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-		    die("Connection failed: " . $conn->connect_error);
-		} 
-
-		echo $_GET["cuisine"];
-		$sql = "SELECT name FROM restaurant WHERE cuisine = $_GET["cuisine"]";
-		$result = $conn->query($sql);
-
-		if ($result->num_rows > 0) {
-		    // output data of each row
-		    while($row = $result->fetch_assoc()) {
-		        echo $row["name"];
-		    }
-		} else {
-		    echo "0 results";
-		}
-		$conn->close();
-	?>"
-}
-</script>
-
 <head>
 	<title>Final Project</title>
 </head>
@@ -67,29 +35,31 @@ function searchForRestaurant() {
  	<center>
  		<h1>Welp</h1>
  		<p>Description of welp</p><br>
- 		<input type="text" name="search" placeholder="I want to eat..">
- 		<br>
- 		<p>Filters:</p>
- 		<select>
- 			<option value="none">Cuisine</option>
-  			<option value="Thai">Thai</option>
-  			<option value="Japanese">Japanese</option>
-  			<option value="American">American</option>
-  			<option value="French">French</option>
-  			<option value="Mexican">Mexican</option>
-  			<option value="Turkish">Turkish</option>
-  			<option value="Tapas">Tapas</option>
-  			<option value="Asian">Asian</option>
-  			<option value="Southwest">Southwest</option>
-  			<option value="Ethiopian">Ethiopian</option>
-		</select>
- 		<select>
- 			<option value="none">Price</option>
-  			<option value="$">$</option>
-  			<option value="$$">$$</option>
-  			<option value="$$$">$$$</option>  			
-		</select>
-		<button type="button" onclick="searchForRestaurant()">Submit</button>
+ 		<form action="query_db.php">
+	 		<input type="text" name="ingredient" placeholder="I want to eat..">
+	 		<br>
+	 		<p>Filters:</p>
+	 		<select name="cuisine">
+	 			<option value="none">Cuisine</option>
+	  			<option value="Thai">Thai</option>
+	  			<option value="Japanese">Japanese</option>
+	  			<option value="American">American</option>
+	  			<option value="French">French</option>
+	  			<option value="Mexican">Mexican</option>
+	  			<option value="Turkish">Turkish</option>
+	  			<option value="Tapas">Tapas</option>
+	  			<option value="Asian">Asian</option>
+	  			<option value="Southwest">Southwest</option>
+	  			<option value="Ethiopian">Ethiopian</option>
+			</select>
+	 		<select name="price">
+	 			<option value="none">Price</option>
+	  			<option value="$">$</option>
+	  			<option value="$$">$$</option>
+	  			<option value="$$$">$$$</option>  			
+			</select>
+			<input type="submit" value="Submit">
+		</form>
 		<p id="test"></p>
 	</center>
 </body>
