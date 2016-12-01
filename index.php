@@ -41,7 +41,6 @@ input[type=text]:focus {
 	 		<p>Filters:</p>
 	 		<select name="cuisine">
 	 			<option value="">Cuisine</option>
-	  			<option value="Thai">Thai</option>
 	  			<option value="Japanese">Japanese</option>
 	  			<option value="American">American</option>
 	  			<option value="French">French</option>
