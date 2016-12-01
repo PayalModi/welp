@@ -42,7 +42,8 @@ function searchForRestaurant() {
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "SELECT name FROM restaurant";
+		echo $_GET["cuisine"];
+		$sql = "SELECT name FROM restaurant WHERE cuisine = $_GET["cuisine"]";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
