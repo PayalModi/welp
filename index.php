@@ -40,7 +40,7 @@ input[type=text]:focus {
 	 		<br>
 	 		<p>Filters:</p>
 	 		<select name="cuisine">
-	 			<option value="none">Cuisine</option>
+	 			<option value="">Cuisine</option>
 	  			<option value="Thai">Thai</option>
 	  			<option value="Japanese">Japanese</option>
 	  			<option value="American">American</option>
@@ -53,7 +53,7 @@ input[type=text]:focus {
 	  			<option value="Ethiopian">Ethiopian</option>
 			</select>
 	 		<select name="price">
-	 			<option value="none">Price</option>
+	 			<option value="">Price</option>
 	  			<option value="$">$</option>
 	  			<option value="$$">$$</option>
 	  			<option value="$$$">$$$</option>  			
