@@ -18,13 +18,13 @@
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
 	        $price = $_GET["price"];
-	        $sql = "SELECT * FROM restaurant WHERE cuisine LIKE '%$cuisine' AND price LIKE '%$price'";
+	        $sql = "SELECT * FROM restaurant, menu, item WHERE cuisine LIKE '%$cuisine' AND price LIKE '%$price' AND ingredient_List LIKE '%$ingredient%' AND item.item_id = menu.item_id AND menu.rest_id = restaurant.ID;";
 	        $result = $conn->query($sql);
 	        if ($result->num_rows > 0) {
 	        	$random = rand(0, $result->num_rows-1);
 	        	mysqli_data_seek($result, $random);
 	        	$row = mysqli_fetch_row($result);
-	        	echo $row[0], $row[2], $row[3], $row[4], $row[5];
+	        	echo $row[0] ."\t". $row[2] ."\t". $row[3] ."\t".$row[4] ."\t". $row[5] ."\t". $row[10];
 	        } else {
 	            echo "0 results";
 	        }
