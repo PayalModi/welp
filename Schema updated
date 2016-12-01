@@ -1,58 +1,50 @@
-
-create table restaurant (
-	name 		varchar(20),
-	ID 		char(5),
-	phone 		numeric(10),
-	website		varchar(30),
-	cuisine		varchar(20),
-	price		varchar(3),
-	avg_rating	numeric(2,1),
-
-	primary key (ID)
+CREATE TABLE restaurant(
+   name            VARCHAR(20) NOT NULL
+  ,ID              INTEGER  NOT NULL PRIMARY KEY 
+  ,phone           VARCHAR(20)
+  ,website         VARCHAR(100)
+  ,cuisine         VARCHAR(20) NOT NULL
+  ,price           VARCHAR(3) NOT NULL
 );
 
-create table menu(
-	rest_id		char(5),
-	item_id 	char(5),
-	item_name	varchar(20),
 
-	primary key (rest_id, item_id),
-	foreign key (rest_id) references restaurant
-	foreign key (item_id) references item
+CREATE TABLE item(
+   item_id         INTEGER  NOT NULL PRIMARY KEY 
+  ,ingredient_List VARCHAR(100) NOT NULL
 );
 
-create table user(
-	name		varchar(20),
-	user_id 	char(10),
-	
-	primary key (user_id)
+
+CREATE TABLE menu(
+   rest_id                              INTEGER  NOT NULL
+  ,item_id                              INTEGER  NOT NULL
+  ,item_name                            VARCHAR(50) NOT NULL
+  ,PRIMARY KEY(rest_id,item_id)
+  ,FOREIGN KEY (rest_id) REFERENCES restaurant(ID)
+  ,FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
-create table comment(
-	user_id			char(10),
-	restaurant_id 		char(5),
-	rating			numeric(2,1),
-	comment 		varchar(100),
 
-	primary key (user_id, restaurant_id),
-	foreign key (user_id) references user,
-	foreign key (restaurant_id) references restaurant
+CREATE TABLE user(
+  username VARCHAR(20) NOT NULL
+  ,user_id INTEGER NOT NULL PRIMARY KEY
 );
 
-create table item(
-	item_id 		char(5),
-	ingredient_list		varchar(100),
-	
-	primary key (item_id)
+
+CREATE TABLE comment(
+   user_id INTEGER NOT NULL
+  ,rest_id INTEGER NOT NULL
+  ,rating NUMERIC(2,1)
+  ,comment VARCHAR(140)
+  ,PRIMARY KEY(user_id,rest_id)
+  ,FOREIGN KEY (user_id) REFERENCES user(user_id)
+  ,FOREIGN KEY (rest_id) REFERENCES restaurant(ID)
 );
 
-create table following(
-	user_id			char(10),
-	followed_id		char(10),
 
-	primary key (user_id, friend_id),
-	foreign key (user_id) references user,
-	foreign key (friend_id) references user
+CREATE TABLE following(
+  user_id INTEGER NOT NULL
+  ,following_id INTEGER NOT NULL
+  ,PRIMARY KEY(user_id,following_id)
+  ,FOREIGN KEY (user_id) REFERENCES user(user_id)
+  ,FOREIGN KEY (following_id) REFERENCES user(user_id)
 );
-	
-
