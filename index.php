@@ -29,7 +29,7 @@ input[type=text]:focus {
 
 <script>
 function searchForRestaurant() {
-	document.getElementById("test").innerHTML = <?php
+	document.getElementById("test").innerHTML = "<?php
 		$servername = "localhost";
 		$username = "root";
 		$password = "finalproject";
@@ -54,7 +54,7 @@ function searchForRestaurant() {
 		    echo "0 results";
 		}
 		$conn->close();
-	?>
+	?>"
 }
 </script>
 
@@ -76,9 +76,9 @@ function searchForRestaurant() {
   			<option value="American">American</option>
   			<option value="French">French</option>
   			<option value="Mexican">Mexican</option>
-  			<option value="Turkish">Mexican</option>
-  			<option value="Tapas">Mexican</option>
-  			<option value="Asian">Mexican</option>
+  			<option value="Turkish">Turkish</option>
+  			<option value="Tapas">Tapas</option>
+  			<option value="Asian">Asian</option>
   			<option value="Southwest">Southwest</option>
   			<option value="Ethiopian">Ethiopian</option>
 		</select>
