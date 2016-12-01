@@ -23,7 +23,7 @@
 	        if ($result->num_rows > 0) {
 	        	$random = rand(0, $result->num_rows-1);
 	        	$row = mysqli_data_seek($result, $random);
-			echo $row;
+			echo $row["name"];
 	        } else {
 	            echo "0 results";
 	        }
