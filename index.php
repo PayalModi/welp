@@ -29,7 +29,7 @@ input[type=text]:focus {
 
 <script>
 function searchForRestaurant() {
-	<?php
+	document.getElementById("test").innerHTML = <?php
 		$servername = "localhost";
 		$username = "root";
 		$password = "finalproject";
@@ -89,6 +89,7 @@ function searchForRestaurant() {
   			<option value="$$$">$$$</option>  			
 		</select>
 		<button type="button" onclick="searchForRestaurant()">Submit</button>
+		<p id="test"></p>
 	</center>
 </body>
 
