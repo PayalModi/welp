@@ -2,7 +2,6 @@
 <body>
 
 Cuisine is <?php echo $_GET["cuisine"]; ?><br>
-
 <?php
 	$servername = "localhost";
 	$username = "root";
@@ -15,7 +14,8 @@ Cuisine is <?php echo $_GET["cuisine"]; ?><br>
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	} 
-	$sql = "SELECT name FROM restaurant WHERE cuisine = $_GET["cuisine"]";
+	$cuisine = $_GET["cuisine"];
+	$sql = "SELECT name FROM restaurant WHERE cuisine = $cuisine";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
@@ -29,5 +29,4 @@ Cuisine is <?php echo $_GET["cuisine"]; ?><br>
 	$conn->close();
 ?>
 
-</body>
 </html>
