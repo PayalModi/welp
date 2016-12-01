@@ -14,7 +14,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
         $cuisine = $_GET["cuisine"];
-        $sql = "SELECT name FROM restaurant WHERE cuisine LIKE '%$cuisine' AND price LIKE '%$price';
+        $sql = "SELECT name FROM restaurant WHERE cuisine LIKE '%$cuisine' AND price LIKE '%$price'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
