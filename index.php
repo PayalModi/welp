@@ -52,7 +52,7 @@ input[type=text]:focus {
 	  			<option value="Ethiopian">Ethiopian</option>
 			</select>
 	 		<select name="price">
-	 			<option value="">Price</option>
+	 			<option value="none">Price</option>
 	  			<option value="$">$</option>
 	  			<option value="$$">$$</option>
 	  			<option value="$$$">$$$</option>  			
