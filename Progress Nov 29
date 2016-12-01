@@ -4,3 +4,9 @@ Progress:
 - Designed database
 - Scraped restaurant data
 - Created Amazon instance to host our database
+- Designed functionality
+    - Can filter by price range ($ to $$$) or cuisine
+    - Search ingredient
+    - Comments
+    - Can follow and be followed
+    - Can sign up/sign in
