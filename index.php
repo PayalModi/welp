@@ -7,6 +7,7 @@ h1 {
 	font-variant: normal;
 	font-weight: 500;
 	font-size: 78px;
+	color: orange;
     margin-bottom: 0px;
 }
 
@@ -16,6 +17,14 @@ body {
 
 #description {
 	width: 500px;
+}
+
+#filtersHeaders {
+	font-size: 20px;
+}
+
+select {
+	width: 140px;
 }
 
 input[type=text] {
@@ -46,7 +55,7 @@ input[type=text]:focus {
  		<form action="query_db.php">
 	 		<input type="text" name="ingredient" placeholder="What item are you craving?">
 	 		<br>
-	 		<p>Filters:</p>
+	 		<p id="filtersHeaders">Filters:</p>
 	 		<select name="cuisine">
 	 			<option value="">Cuisine</option>
 	  			<option value="Japanese">Japanese</option>
@@ -67,7 +76,6 @@ input[type=text]:focus {
 			</select>
 			<input type="submit" value="Submit">
 		</form>
-		<p id="test"></p>
 	</center>
 </body>
 
