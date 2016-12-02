@@ -79,15 +79,15 @@ input[type=text]:focus {
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
 			<input type="text" name="username" placeholder="Username"><br>
 			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
+			<input type="text" name="comment" placeholder="Comment"><br>
 			<select name="price">
 	 			<option value="none">Rating</option>
 	  			<option value="1">1</option>
 	  			<option value="2">2</option>
 	  			<option value="3">3</option>  
-				<option value="4">3</option> 
-				<option value="5">3</option> 
+				<option value="4">4</option> 
+				<option value="5">5</option> 
 			</select><br>
-			<input type="text" name="comment" placeholder="Comment"><br>
 			<input type="submit" value="Submit">
 		</form>
 	</center>
