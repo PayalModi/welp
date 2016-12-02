@@ -2,6 +2,10 @@
 
 <style type="text/css">
 h1 {
+	font-family: Impact;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
 	font-size: 78px;
     margin-bottom: 0px;
 }
