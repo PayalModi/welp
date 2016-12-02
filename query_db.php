@@ -56,7 +56,7 @@ body {
 		
 		if ($usercomm->num_rows > 0 && $restcomm->num_rows > 0) {
 		
-		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm', '$restcomm', '$rating', '$comment')";
+		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm', '$restcomm', '$rating', '$comment');";
 
 		if ($conn->query($addcomm) === TRUE) {
 		    echo "New record created successfully";
