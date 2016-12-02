@@ -78,6 +78,7 @@ input[type=text]:focus {
 			<hr width="33%">
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
 			<input type="text" name="username" placeholder="Username"><br>
+			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
 			<select name="price">
 	 			<option value="none">Rating</option>
 	  			<option value="1">1</option>
@@ -85,8 +86,7 @@ input[type=text]:focus {
 	  			<option value="3">3</option>  
 				<option value="4">3</option> 
 				<option value="5">3</option> 
-			</select>
-			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
+			</select><br>
 			<input type="text" name="comment" placeholder="Comment"><br>
 			<input type="submit" value="Submit">
 		</form>
