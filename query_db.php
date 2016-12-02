@@ -11,7 +11,7 @@ h1 {
 	color: orange;
 }
 
-#output p {
+p#output {
 	text-transform: capitalize;
 }
 
@@ -28,7 +28,7 @@ body {
 <body background="background.jpg">
 <center>
  	<h1>Welp</h1>
- 	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
+ 	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p>
  	<hr width="33%">
 	<p id="output">
 	<?php
