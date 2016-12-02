@@ -10,8 +10,16 @@ h1 {
     margin-bottom: 0px;
 }
 
+body {
+	font-family:arial;
+}
+
+#description {
+	width: 500px;
+}
+
 input[type=text] {
-    width: 200px;
+    width: 300px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     box-sizing: border-box;
@@ -19,13 +27,9 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    /*background-image: url('searchicon.png');*/
-    /*background-position: 10px 10px; */
-    /*background-repeat: no-repeat;*/
-    padding: 12px 20px 12px 40px;
+    padding: 12px 13px 12px 13px;
 }
 
-/* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 60%;
 }
@@ -35,12 +39,12 @@ input[type=text]:focus {
 	<title>Final Project</title>
 </head>
 
-<body>
+<body background="background.jpg">
  	<center>
  		<h1>Welp</h1>
- 		<p>Description of welp</p><br>
+ 		<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
  		<form action="query_db.php">
-	 		<input type="text" name="ingredient" placeholder="I want to eat..">
+	 		<input type="text" name="ingredient" placeholder="What item are you craving?">
 	 		<br>
 	 		<p>Filters:</p>
 	 		<select name="cuisine">
