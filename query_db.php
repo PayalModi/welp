@@ -62,6 +62,12 @@ body {
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
 				echo $crow['comment'];
+				echo "<br>";
+				echo $crow["comment"];
+				echo "<br>";
+				echo $crow[0];
+				echo "<br>";
+				echo "blah";
 			}
 	        } else {
 	            echo "0 results";
