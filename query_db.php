@@ -11,10 +11,6 @@ h1 {
 	color: orange;
 }
 
-p.output {
-	text-transform: capitalize;
-}
-
 body {
 	font-family:arial;
 }
@@ -32,7 +28,6 @@ body {
  	<hr>
 	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
 	<?php
-		echo "<p id="output">";
 	        $servername = "localhost";
 	        $username = "root";
 	        $password = "finalproject";
@@ -55,12 +50,11 @@ body {
 	        	$random = rand(0, $result->num_rows-1);
 	        	mysqli_data_seek($result, $random);
 	        	$row = mysqli_fetch_row($result);
-	        	echo "You should eat: $row[8] at $row[0] ."\t". $row[2] ."\t". $row[3] ."\t".$row[4] ."\t". $row[5] ."\t". $row[8];
+	        	echo "You should eat: $row[8] at $row[0] <br> $row[2] $row[3] $row[4] $row[5]";
 	        } else {
 	            echo "0 results";
 	        }
 	        $conn->close();
-		echo "</p>";
 	?>
 </center>
 
