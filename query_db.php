@@ -1,9 +1,30 @@
 <html>
-<body>
 
+<style type="text/css">
+h1 {
+	font-family: Impact;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 78px;
+    margin-bottom: 0px;
+}
+
+body {
+	font-family:arial;
+}
+
+#description {
+	width: 500px;
+}
+
+</style>
+
+<body background="background.jpg">
 <center>
  	<h1>Welp</h1>
- 	<p>Welp is a tool to help you find blah.</p><br>
+ 	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
+ 	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
 	<?php
 	        $servername = "localhost";
 	        $username = "root";
