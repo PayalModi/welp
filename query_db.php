@@ -61,10 +61,10 @@ body {
 			$commsql = "SELECT * FROM comment, user WHERE comment.rest_id = '$row[1]' AND comment.user_id = user.user_id;";
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
-				echo $crow[0];
-				echo $crow[1];
 				echo $crow[2];
-				echo "blah";
+				echo $crow[3];
+				echo $crow[4];
+				echo $crow[5];
 			}
 	        } else {
 	            echo "0 results";
