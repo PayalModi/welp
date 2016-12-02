@@ -54,16 +54,12 @@ body {
 		$restcommsql = "SELECT ID FROM restaurant WHERE name='$restaurantcomm';";
 		$restcomm = mysqli_fetch_row($conn->query($restcommsql));
 		if ($usercomm > 0 && $restcomm > 0) {
-		echo $usercomm;
-		echo $restcomm;
-		echo "<br>";
-		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm[0]', '$restcomm[0]', '$rating', '$comment');";
-		echo "<br>blah";
-		if ($conn->query($addcomm) === TRUE) {
-		    echo "New record created successfully";
-		} else {
-		    echo "Error: " . $sql . "<br>" . $conn->error;
-		}
+		$addcomm = "INSERT INTO comment (user_id, rest_id, rating, comment) VALUES ('$usercomm[0]', '$restcomm[0]', '$rating', '$comment');";
+			if ($conn->query($addcomm) === TRUE) {
+			    echo "<br> $usercomm[0] $restcomm[0] $rating $comment";
+			} else {
+			    echo "Error: " . $sql . "<br>" . $conn->error;
+			}
 		}
 		
 	        $ingredient = $_GET["ingredient"];
