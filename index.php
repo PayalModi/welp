@@ -75,6 +75,11 @@ input[type=text]:focus {
 	  			<option value="$$$">$$$</option>  			
 			</select>
 			<input type="submit" value="Submit">
+			<hr width="33%">
+			<input type="text" name="username" placeholder="Username"><br>
+			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
+			<input type="text" name="comment" placeholder="Comment"><br>
+			<input type="submit" value="Submit">
 		</form>
 	</center>
 </body>
