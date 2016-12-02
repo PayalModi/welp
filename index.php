@@ -80,7 +80,7 @@ input[type=text]:focus {
 			<input type="text" name="username" placeholder="Username"><br>
 			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
 			<input type="text" name="comment" placeholder="Comment"><br>
-			<select name="price">
+			<select name="rating">
 	 			<option value="none">Rating</option>
 	  			<option value="1">1</option>
 	  			<option value="2">2</option>
