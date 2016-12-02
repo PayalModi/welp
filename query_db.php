@@ -57,10 +57,16 @@ body {
 	        	$row = mysqli_fetch_row($result);
 	        	echo "Eat: $row[8] <br> At: $row[0] ($row[4], $row[5]) <br> Contact info: $row[2] ";
 			echo '<a href="'. $row[3]. '"target="_blank">'. $row[3]. '</a>';
+			echo '<hr width="33%">Reviews of '. $row[3] .': ';
+			$commsql = "SELECT * FROM comment WHERE comment.rest_id = '$row[0]';";
+	        	$comments = $conn->query($commsql);
+			while ($crow = mysqli_fetch_row($comments)) {
+				echo $crow['comment'];
+			}
 	        } else {
 	            echo "0 results";
 	        }
-		echo '<hr width="33%">Reviews of '. $row[3] .':';
+
 	        $conn->close();
 	?>
 	</p>
