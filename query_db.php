@@ -11,6 +11,10 @@ h1 {
 	color: orange;
 }
 
+p.output {
+	text-transform: capitalize;
+}
+
 body {
 	font-family:arial;
 }
@@ -25,8 +29,7 @@ body {
 <center>
  	<h1>Welp</h1>
  	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
- 	<hr size="30">
-	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
+ 	<hr width="50%">
 	<p id="output">
 	<?php
 	        $servername = "localhost";
@@ -51,13 +54,14 @@ body {
 	        	$random = rand(0, $result->num_rows-1);
 	        	mysqli_data_seek($result, $random);
 	        	$row = mysqli_fetch_row($result);
-	        	echo "You should eat: $row[8] at $row[0] ($row[4], $row[5]) <br> Contact info: $row[2], $row[3]";
+	        	echo "You should eat: $row[8] at $row[0] ($row[4], $row[5]) <br> Contact info: $row[2] $row[3]";
 	        } else {
 	            echo "0 results";
 	        }
 	        $conn->close();
 	?>
 	</p>
+	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
 </center>
 
 </body>
