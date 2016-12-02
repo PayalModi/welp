@@ -29,10 +29,10 @@ body {
 <center>
  	<h1>Welp</h1>
  	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
- 	<br>
+ 	<hr>
 	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
-	<p id="output">
 	<?php
+		echo "<p id="output">";
 	        $servername = "localhost";
 	        $username = "root";
 	        $password = "finalproject";
@@ -60,8 +60,8 @@ body {
 	            echo "0 results";
 	        }
 	        $conn->close();
+		echo "</p>";
 	?>
-	</p>
 </center>
 
 </body>
