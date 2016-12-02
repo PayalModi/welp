@@ -21,6 +21,7 @@ body {
 
 #description {
 	width: 500px;
+	font-size: small;
 }
 
 </style>
@@ -59,6 +60,7 @@ body {
 	        } else {
 	            echo "0 results";
 	        }
+		echo '<hr width="33%">Reviews of '. $row[3] .':';
 	        $conn->close();
 	?>
 	</p>
