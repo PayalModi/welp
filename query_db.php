@@ -53,7 +53,7 @@ body {
 		$usercomm = mysqli_fetch_row($conn->query($usercommsql));
 		$restcommsql = "SELECT ID FROM restaurant WHERE name='$restaurantcomm';";
 		$restcomm = mysqli_fetch_row($conn->query($restcommsql));
-		if ($usercomm->num_rows > 0 && $restcomm->num_rows > 0) {
+		if ($usercomm > 0 && $restcomm > 0) {
 		echo $usercomm;
 		echo $restcomm;
 		echo "<br>";
