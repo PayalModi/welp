@@ -43,6 +43,28 @@ body {
 	        if ($conn->connect_error) {
 	            die("Connection failed: " . $conn->connect_error);
 	        }
+		//add comment if exists
+		$username = $_GET["username"];
+		$restaurantcomm = $_GET["restaurantcomm"];
+		$comment = $_GET["comment"];
+		$rating = $_GET["rating"];
+		
+		$usercommsql = "SELECT user_id FROM user WHERE username='$username';";
+		$usercomm = $conn->query($usercommsql);
+		$restcommsql = "SELECT ID FROM restaurant WHERE name='$restaurantcomm';";
+		$restcomm = $conn->query($restcommsql);
+		
+		if ($usercomm->num_rows > 0 && $restcomm->num_rows > 0) {
+		
+		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm', '$restcomm', '$rating', '$comment')";
+
+		if ($conn->query($addcomm) === TRUE) {
+		    echo "New record created successfully";
+		} else {
+		    echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+		}
+		
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
 	        $price = $_GET["price"];
