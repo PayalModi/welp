@@ -57,8 +57,6 @@ body {
 		$addcomm = "INSERT INTO comment (user_id, rest_id, rating, comment) VALUES ('$usercomm[0]', '$restcomm[0]', '$rating', '$comment');";
 			if ($conn->query($addcomm) === TRUE) {
 			    echo "<br> $usercomm[0] $restcomm[0] $rating $comment";
-			} else {
-			    echo "Error: " . $sql . "<br>" . $conn->error;
 			}
 		}
 		
