@@ -54,7 +54,7 @@ body {
 	        	$random = rand(0, $result->num_rows-1);
 	        	mysqli_data_seek($result, $random);
 	        	$row = mysqli_fetch_row($result);
-	        	echo "Eat: $row[8] <br> At: $row[0] ($row[4], $row[5]) <br> Contact info: $row[2] "<a href="$row[3]">$row[3]</a>"";
+	        	echo "Eat: $row[8] <br> At: $row[0] ($row[4], $row[5]) <br> Contact info: $row[2] $row[3]";
 	        } else {
 	            echo "0 results";
 	        }
