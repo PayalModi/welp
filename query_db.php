@@ -50,13 +50,14 @@ body {
 		$rating = $_GET["rating"];
 		
 		$usercommsql = "SELECT user_id FROM user WHERE username='$username';";
-		$usercomm = $conn->query($usercommsql);
+		$usercomm = mysqli_fetch_row($conn->query($usercommsql));
 		$restcommsql = "SELECT ID FROM restaurant WHERE name='$restaurantcomm';";
-		$restcomm = $conn->query($restcommsql);
-		echo "<br>blah";
+		$restcomm = mysqli_fetch_row($conn->query($restcommsql));
 		if ($usercomm->num_rows > 0 && $restcomm->num_rows > 0) {
-		echo "<br>blah";
-		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm', '$restcomm', '$rating', '$comment');";
+		echo $usercomm;
+		echo $restcomm;
+		echo "<br>";
+		$addcomm = "INSERT INTO comments (user_id, rest_id, rating, comment) VALUES ('$usercomm[0]', '$restcomm[0]', '$rating', '$comment');";
 		echo "<br>blah";
 		if ($conn->query($addcomm) === TRUE) {
 		    echo "New record created successfully";
