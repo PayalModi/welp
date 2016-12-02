@@ -61,7 +61,7 @@ body {
 			$commsql = "SELECT * FROM comment, user WHERE comment.rest_id = '$row[1]' AND comment.user_id = user.user_id;";
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
-				echo "$crow[4]: $crow[2] Stars Comment: $crow[3]";
+				echo "$crow[4]: $crow[2] Stars, $crow[3]";
 			}
 	        } else {
 	            echo "0 results";
