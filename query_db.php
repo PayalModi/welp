@@ -25,8 +25,9 @@ body {
 <center>
  	<h1>Welp</h1>
  	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
- 	<hr>
+ 	<hr size="30">
 	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
+	<p id="output">
 	<?php
 	        $servername = "localhost";
 	        $username = "root";
@@ -50,12 +51,13 @@ body {
 	        	$random = rand(0, $result->num_rows-1);
 	        	mysqli_data_seek($result, $random);
 	        	$row = mysqli_fetch_row($result);
-	        	echo "You should eat: $row[8] at $row[0] <br> $row[2] $row[3] $row[4] $row[5]";
+	        	echo "You should eat: $row[8] at $row[0] ($row[4], $row[5]) <br> Contact info: $row[2], $row[3]";
 	        } else {
 	            echo "0 results";
 	        }
 	        $conn->close();
 	?>
+	</p>
 </center>
 
 </body>
