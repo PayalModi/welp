@@ -59,7 +59,7 @@ body {
 			    echo "<br> $usercomm[0] $restcomm[0] $rating $comment";
 			}
 		}
-		
+	
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
 	        $price = $_GET["price"];

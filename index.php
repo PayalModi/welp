@@ -58,22 +58,32 @@ input[type=text]:focus {
 	 		<p id="filtersHeaders">Filters:</p>
 	 		<select name="cuisine">
 	 			<option value="">Cuisine</option>
-	  			<option value="Japanese">Japanese</option>
-	  			<option value="American">American</option>
-	  			<option value="French">French</option>
-	  			<option value="Mexican">Mexican</option>
-	  			<option value="Turkish">Turkish</option>
-	  			<option value="Tapas">Tapas</option>
-	  			<option value="Asian">Asian</option>
-	  			<option value="Southwest">Southwest</option>
-	  			<option value="Ethiopian">Ethiopian</option>
+	  		    <?php 
+				// should change this so the login info isn't right here lol i'll work on this later
+					$conn = new mysqli("localhost", "root", "finalproject", "cs437db");
+    			    $cuisinesql = "SELECT DISTINCT cuisine FROM restaurant ORDER BY cuisine ASC";
+  					$cuisinecomm = $conn->query($cuisinesql);
+					$cuisinearr = array();
+					while ($cuisrow = mysqli_fetch_row($cuisinecomm)) {
+						echo "<option value=\"$cuisrow[0]\">$cuisrow[0]</option>";
+						$cuisinearr[] = $cuisrow;
+					}
+			      ?>
+
 			</select>
 	 		<select name="price">
 	 			<option value="none">Price</option>
-	  			<option value="$">$</option>
-	  			<option value="$$">$$</option>
-	  			<option value="$$$">$$$</option>  			
-			</select>
+				<?php
+	 				$conn = new mysqli("localhost", "root", "finalproject", "cs437db");
+                    $pricesql = "SELECT DISTINCT price FROM restaurant ORDER BY price ASC";
+                    $pricecomm = $conn->query($pricesql);
+                    $pricearr = array();
+                    while ($pricerow = mysqli_fetch_row($pricecomm)) {
+                        echo "<option value=\"$pricerow[0]\">$pricerow[0]</option>";
+                        $pricearr[] = $pricerow;
+                    }
+				?> 				  			
+				</select>
 			<input type="submit" value="Submit">
 			<hr width="33%">
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
