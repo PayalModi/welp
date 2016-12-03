@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 
 <style type="text/css">
@@ -85,18 +86,21 @@ input[type=text]:focus {
 				?> 				  			
 				</select>
 			<input type="submit" value="Submit">
-			<hr width="33%">
+			
+		</form>
+		<form action="comment_form.php">
+		<hr width="33%">
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
 			<input type="text" name="username" placeholder="Username"><br>
 			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
 			<input type="text" name="comment" placeholder="Comment"><br>
 			<select name="rating">
 	 			<option value="none">Rating</option>
-	  			<option value="1">1</option>
-	  			<option value="2">2</option>
-	  			<option value="3">3</option>  
-				<option value="4">4</option> 
-				<option value="5">5</option> 
+	  			<option value="1">&#9733</option>
+	  			<option value="2">&#9733&#9733</option>
+	  			<option value="3">&#9733&#9733&#9733</option>  
+				<option value="4">&#9733&#9733&#9733&#9733</option> 
+				<option value="5">&#9733&#9733&#9733&#9733&#9733</option> 
 			</select><br>
 			<input type="submit" value="Submit">
 		</form>

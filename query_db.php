@@ -24,6 +24,24 @@ body {
 	font-size: small;
 }
 
+select {
+	width: 140px;
+}
+input[type=text] {
+    width: 300px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 13px 12px 13px;
+}
+input[type=text]:focus {
+    width: 60%;
+}
+
 </style>
 
 <body background="background.jpg">
@@ -88,6 +106,9 @@ body {
 	?>
 	</p>
 	<input action="action" type="button" value="Back" onclick="history.go(-1);" />
+
+	
+
 </center>
 
 </body>
