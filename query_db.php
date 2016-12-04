@@ -53,7 +53,7 @@
 			$commsql = "SELECT * FROM comment, user WHERE comment.rest_id = '$row[1]' AND comment.user_id = user.user_id;";
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
-				echo "<a href=\"userpage.php?username=".urlencode($crow[4])."\">$crow[4]</a>: $crow[2] Stars, $crow[3]<br>";
+				echo "<a href=\"userpage.php?username=".urlencode($crow[4])."&user_id=".urlencode($crow[5])."\">$crow[4]</a>: $crow[2] Stars, $crow[3]<br>";
 			}
 	        } else {
 	            echo "0 results";
