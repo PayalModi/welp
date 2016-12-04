@@ -17,8 +17,9 @@
 	        if ($conn->connect_error) {
 	            die("Connection failed: " . $conn->connect_error);
 	        }
+		// Handled now in commentform.php, will delete this once I'm sure it works how I want
 		//add comment if exists
-		$username = $_GET["username"];
+		/*$username = $_GET["username"];
 		$restaurantcomm = $_GET["restaurantcomm"];
 		$comment = $_GET["comment"];
 		$rating = $_GET["rating"];
@@ -32,7 +33,7 @@
 			if ($conn->query($addcomm) === TRUE) {
 			    echo "<br> $usercomm[0] $restcomm[0] $rating $comment";
 			}
-		}
+		}*/
 	
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
@@ -52,7 +53,7 @@
 			$commsql = "SELECT * FROM comment, user WHERE comment.rest_id = '$row[1]' AND comment.user_id = user.user_id;";
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
-				echo "$crow[4]: $crow[2] Stars, $crow[3]<br>";
+				echo "<a href=\"userpage.php?username=".urlencode($crow[4])."\">$crow[4]</a>: $crow[2] Stars, $crow[3]<br>";
 			}
 	        } else {
 	            echo "0 results";

@@ -25,6 +25,7 @@
 						echo "<option value=\"$cuisrow[0]\">$cuisrow[0]</option>";
 						$cuisinearr[] = $cuisrow;
 					}
+					$conn->close();
 			      ?>
 
 			</select>
@@ -39,19 +40,21 @@
                         echo "<option value=\"$pricerow[0]\">$pricerow[0]</option>";
                         $pricearr[] = $pricerow;
                     }
+					$conn->close();
 				?> 				  			
 				</select>
 			<input type="submit" value="Submit">
 			
 		</form>
-		<form action="comment_form.php">
+		<iframe name="commentframe" width="0" height="0" border="0" style="display:none;"></iframe>
+		<form action="comment_form.php" target="commentframe">
 		<hr width="33%">
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
 			<input type="text" name="username" placeholder="Username"><br>
 			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
 			<input type="text" name="comment" placeholder="Comment"><br>
 			<select name="rating">
-	 			<option value="none">Rating</option>
+	 			<option value="">Rating</option>
 	  			<option value="1">&#9733</option>
 	  			<option value="2">&#9733&#9733</option>
 	  			<option value="3">&#9733&#9733&#9733</option>  
