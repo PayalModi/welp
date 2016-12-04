@@ -1,49 +1,5 @@
 <html>
-
-<style type="text/css">
-h1 {
-	font-family: Impact;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	font-size: 78px;
-    margin-bottom: 0px;
-	color: orange;
-}
-
-p#output {
-	text-transform: capitalize;
-}
-
-body {
-	font-family:arial;
-}
-
-#description {
-	width: 500px;
-	font-size: small;
-}
-
-select {
-	width: 140px;
-}
-input[type=text] {
-    width: 300px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    padding: 12px 13px 12px 13px;
-}
-input[type=text]:focus {
-    width: 60%;
-}
-
-</style>
-
+<link rel="stylesheet" type="text/css" href="welpstyle.css" />
 <body background="background.jpg">
 <center>
  	<h1>Welp</h1>
@@ -52,8 +8,8 @@ input[type=text]:focus {
 	<p id="output">
 	<?php
 	        $servername = "localhost";
-	        $username = "root";
-	        $password = "finalproject";
+	        $username = "browser";
+	        $password = "cs437";
 	        $dbname = "cs437db";
 	        // Create connection
 	        $conn = new mysqli($servername, $username, $password, $dbname);

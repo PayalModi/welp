@@ -1,25 +1,6 @@
 <html>
-<style type="text/css">
-h1 {
-	font-family: Impact;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	font-size: 78px;
-    margin-bottom: 0px;
-	color: orange;
-}
-p#output {
-	text-transform: capitalize;
-}
-body {
-	font-family:arial;
-}
-#description {
-	width: 500px;
-	font-size: small;
-}
-</style>
+
+<link rel="stylesheet" type="text/css" href="welpstyle.css" />
 
 <body background="background.jpg">
 <center>

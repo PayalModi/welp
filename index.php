@@ -1,50 +1,6 @@
 <?php session_start(); ?>
 <html>
-
-<style type="text/css">
-h1 {
-	font-family: Impact;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 500;
-	font-size: 78px;
-	color: orange;
-    margin-bottom: 0px;
-}
-
-body {
-	font-family:arial;
-}
-
-#description {
-	width: 500px;
-}
-
-#filtersHeaders {
-	font-size: 20px;
-}
-
-select {
-	width: 140px;
-}
-
-input[type=text] {
-    width: 300px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    padding: 12px 13px 12px 13px;
-}
-
-input[type=text]:focus {
-    width: 60%;
-}
-</style>
-
+<link rel="stylesheet" type="text/css" href="welpstyle.css" />
 <head>
 	<title>Final Project</title>
 </head>
@@ -61,7 +17,7 @@ input[type=text]:focus {
 	 			<option value="">Cuisine</option>
 	  		    <?php 
 				// should change this so the login info isn't right here lol i'll work on this later
-					$conn = new mysqli("localhost", "root", "finalproject", "cs437db");
+					$conn = new mysqli("localhost", "browser", "cs437", "cs437db");
     			    $cuisinesql = "SELECT DISTINCT cuisine FROM restaurant ORDER BY cuisine ASC";
   					$cuisinecomm = $conn->query($cuisinesql);
 					$cuisinearr = array();
@@ -75,7 +31,7 @@ input[type=text]:focus {
 	 		<select name="price">
 	 			<option value="none">Price</option>
 				<?php
-	 				$conn = new mysqli("localhost", "root", "finalproject", "cs437db");
+	 				$conn = new mysqli("localhost", "browser", "cs437", "cs437db");
                     $pricesql = "SELECT DISTINCT price FROM restaurant ORDER BY price ASC";
                     $pricecomm = $conn->query($pricesql);
                     $pricearr = array();
