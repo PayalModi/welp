@@ -8,6 +8,14 @@
 <body background="background.jpg">
  	<center>
  		<h1>Welp</h1>
+		<?php  
+			if(isset($_SESSION['user_id'])) {
+				echo '<form action="logout.php"> <input type="submit" value="Logout"/> </form>';	
+			} else {
+				echo '<form action="loginpage.php"> <input type="submit" value="Login"/> </form>';
+				echo '<form action=""> <input type="submit" value="Register"/> </form>';
+			}
+		?>
  		<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
  		<form action="query_db.php">
 	 		<input type="text" name="ingredient" placeholder="What item are you craving?">

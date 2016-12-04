@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <link rel="stylesheet" type="text/css" href="welpstyle.css" />
 <body background="background.jpg">
