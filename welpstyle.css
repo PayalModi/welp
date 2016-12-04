@@ -8,6 +8,10 @@ h1 {
 	color: orange;
     margin-bottom: 0px;
 }
+a {
+	text-decoration: none;
+	color: orange;
+}
 body {
 	font-family:arial;
 }

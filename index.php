@@ -7,7 +7,7 @@
 
 <body background="background.jpg">
  	<center>
- 		<h1>Welp</h1>
+ 		<h1><a style="color:orange; text-decoration:none" href="http://35.161.174.85">Welp</a></h1>
 		<?php  
 			if(isset($_SESSION['user_id'])) {
 				echo '<form action="logout.php"> <input type="submit" value="Logout"/> </form>';	
@@ -18,7 +18,7 @@
 		?>
  		<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>
  		<form action="query_db.php">
-	 		<input type="text" name="ingredient" placeholder="What item are you craving?">
+	 		<input type="text" name="ingredient" maxlength=100 placeholder="What item are you craving?">
 	 		<br>
 	 		<p id="filtersHeaders">Filters:</p>
 	 		<select name="cuisine">
@@ -54,13 +54,17 @@
 			<input type="submit" value="Submit">
 			
 		</form>
-		<iframe name="commentframe" width="0" height="0" border="0" style="display:none;"></iframe>
-		<form action="comment_form.php" target="commentframe">
+		<?php  
+			if ($_SESSION["user_id"]) {
+               echo '<form action="comment_form.php">';
+			} else {
+				echo '<form action="" style="display:none;">';
+			}
+		?>
 		<hr width="33%">
 			<p id="filtersHeaders">Add a comment to a restaurant:</p>
-			<input type="text" name="username" placeholder="Username"><br>
-			<input type="text" name="restaurantcomm" placeholder="Restaurant"><br>
-			<input type="text" name="comment" placeholder="Comment"><br>
+			<input type="text" name="restaurantcomm" maxlength=20 placeholder="Restaurant"><br>
+			<input type="text" name="comment" maxlength=140 placeholder="Comment"><br>
 			<select name="rating">
 	 			<option value="">Rating</option>
 	  			<option value="1">&#9733</option>
@@ -71,6 +75,7 @@
 			</select><br>
 			<input type="submit" value="Submit">
 		</form>
+
 	</center>
 </body>
 

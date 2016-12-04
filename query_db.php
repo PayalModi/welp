@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="welpstyle.css" />
 <body background="background.jpg">
 <center>
- 	<h1>Welp</h1>
+ 	<h1><a style="color:orange; text-decoration:none" href="http://35.161.174.85">Welp</a></h1>
  	<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p>
  	<hr width="33%">
 	<p id="output">
@@ -18,23 +18,6 @@
 	        if ($conn->connect_error) {
 	            die("Connection failed: " . $conn->connect_error);
 	        }
-		// Handled now in commentform.php, will delete this once I'm sure it works how I want
-		//add comment if exists
-		/*$username = $_GET["username"];
-		$restaurantcomm = $_GET["restaurantcomm"];
-		$comment = $_GET["comment"];
-		$rating = $_GET["rating"];
-		
-		$usercommsql = "SELECT user_id FROM user WHERE username='$username';";
-		$usercomm = mysqli_fetch_row($conn->query($usercommsql));
-		$restcommsql = "SELECT ID FROM restaurant WHERE name='$restaurantcomm';";
-		$restcomm = mysqli_fetch_row($conn->query($restcommsql));
-		if ($usercomm > 0 && $restcomm > 0) {
-		$addcomm = "INSERT INTO comment (user_id, rest_id, rating, comment) VALUES ('$usercomm[0]', '$restcomm[0]', '$rating', '$comment');";
-			if ($conn->query($addcomm) === TRUE) {
-			    echo "<br> $usercomm[0] $restcomm[0] $rating $comment";
-			}
-		}*/
 	
 	        $ingredient = $_GET["ingredient"];
 	        $cuisine = $_GET["cuisine"];
