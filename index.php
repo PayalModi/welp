@@ -10,10 +10,11 @@
  		<h1><a style="color:orange; text-decoration:none" href="http://35.161.174.85">Welp</a></h1>
 		<?php  
 			if(isset($_SESSION['user_id'])) {
-				echo '<form action="logout.php"> <input type="submit" value="Logout"/> </form>';	
+				echo '<form action="logout.php"> <input type="submit" value="Logout"/> </form>';
+				echo '<a href="userpage.php?username='.$_SESSION["user_name"].'&user_id='.$_SESSION["user_id"].'">My Page</a>';
 			} else {
 				echo '<form action="loginpage.php"> <input type="submit" value="Login"/> </form>';
-				echo '<form action=""> <input type="submit" value="Register"/> </form>';
+				echo '<form action="registerpage.php"> <input type="submit" value="Register"/> </form>';
 			}
 		?>
  		<p id="description">Enter an ingredient that you are craving, a cuisine, and/or a price range, and we will suggest a random item that meets your needs for you from a restaurant in New Haven! </p><br>

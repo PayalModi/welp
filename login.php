@@ -18,7 +18,7 @@
  	   	$_SESSION['user_name'] = $row[0];
 		header('Location: http://35.161.174.85');
 	} else { // Login failed
-		
+		header('Location: http://35.161.174.85/loginpage.php?fail=1');	
 	}
 ?>
 
