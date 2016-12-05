@@ -34,10 +34,20 @@
 	        	echo "Eat: $row[8] <br> At: $row[0] ($row[4], $row[5]) <br> Contact info: $row[2] ";
 			echo '<a href="'. $row[3]. '"target="_blank">'. $row[3]. '</a>';
 			echo '<hr width="33%">Reviews of '. $row[0] .':<br>';
+
+			$avgsql = "SELECT AVG(rating) AS rating FROM comment WHERE comment.rest_id = $row[1];";
+			$res = mysqli_fetch_row($conn->query($avgsql))[0];
+			if ($res) {
+				echo '<p>Average '.(floor($res * 100)/100) .' stars</p>';
+			}
+
 			$commsql = "SELECT * FROM comment, user WHERE comment.rest_id = '$row[1]' AND comment.user_id = user.user_id;";
 	        	$comments = $conn->query($commsql);
 			while ($crow = mysqli_fetch_row($comments)) {
 				echo "<a href=\"userpage.php?username=".urlencode($crow[4])."&user_id=".urlencode($crow[5])."\">$crow[4]</a>: $crow[2] Stars, $crow[3]<br>";
+			}
+			if ($comments->num_rows == 0) {
+				echo '<p>No reviews yet for this restaurant.</p>';
 			}
 	        } else {
 	            echo "0 results";
